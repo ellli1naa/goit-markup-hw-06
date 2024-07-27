@@ -77,7 +77,6 @@ ul {
 
 .head .container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
@@ -288,6 +287,10 @@ ul {
   margin-bottom: 40px;
 }
 
+.menu-mob li:last-child {
+  margin-bottom: 0;
+}
+
 .mobile-nav-link-studio {
   font-size: 36px;
   font-weight: 700;
@@ -305,11 +308,13 @@ ul {
 
 .mobile-contact-info {
   margin-top: 40px;
+  margin-bottom: 48px;
 }
 
 .mobile-contact-list {
   padding: 0;
   margin: 0;
+  font-style: normal;
 }
 
 .mobile-contact-list li {
@@ -326,6 +331,12 @@ ul {
   transition: color 0.3s ease-in-out;
 }
 
+.mobile-contact-list li:last-child {
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
+.mobile-contact-link.current,
 .mobile-contact-link:hover {
   color: #4d5ae5;
 }
@@ -336,14 +347,8 @@ ul {
 }
 
 .icon-mob {
-  background-color: #4d5ae5;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s;
 }
 
 .icon-footer:hover {
@@ -355,7 +360,15 @@ ul {
 }
 
 .mobile-icons {
+  width: 40px;
+  height: 40px;
   display: inline-block;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
 }
 
 /* Герой секція */
@@ -369,11 +382,10 @@ ul {
       rgba(46, 47, 66, 0.7)
     ),
     url(../images/people-office.jpg);
-  max-width: 768px;
-  height: 432px;
+  max-width: 320px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 320px 432px;
 }
 
 .hero-title {
@@ -385,6 +397,7 @@ ul {
   text-align: center;
   max-width: 216px;
   margin: 0 auto;
+  margin-bottom: 72px;
 }
 
 .hero .container {
@@ -405,7 +418,7 @@ ul {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin: 72px auto;
+  margin: 0 auto;
   padding: 16px 32px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -418,19 +431,26 @@ ul {
 @media screen and (min-width: 768px) {
   .hero {
     padding: 112px 0;
-    max-width: 1158px;
+    max-width: 768px;
     height: 436px;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office.jpg);
+    background-size: 768px 436px;
   }
 
   .hero-title {
     font-size: 56px;
     line-height: 1.07;
     max-width: 496px;
-    margin: 0 auto 48px;
+    margin: 0 auto 36px;
+    margin-bottom: 72px;
   }
 
   .hero-button {
-    margin: 112 auto;
+    margin: 0 auto;
   }
 }
 
@@ -441,6 +461,12 @@ ul {
     margin-left: auto;
     margin-right: auto;
     height: 600px;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office.jpg);
+    background-size: 1440px 600px;
   }
   .hero-button {
     margin: 0 auto;
@@ -450,10 +476,12 @@ ul {
 /* Секція Solutions */
 
 .features {
-  padding: 96px 16px;
+  padding: 96px 0;
 }
 
 .features-list {
+  display: flex;
+  flex-wrap: wrap;
   gap: 72px;
 }
 
@@ -476,9 +504,7 @@ ul {
 }
 
 .icon {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -487,9 +513,7 @@ ul {
   }
 
   .features-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
+    gap: 72px 24px;
   }
 
   .feature-item {
@@ -573,7 +597,7 @@ ul {
 
 .team-member {
   background-color: #ffffff;
-  width: 100%;
+  width: 264px;
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -649,11 +673,11 @@ ul {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    row-gap: 64px;
   }
 
   .team-member {
-    flex: 1 1 calc(40% - 24px);
-    max-width: calc(40% - 24px);
+    max-width: 264px;
   }
 }
 
@@ -667,8 +691,7 @@ ul {
   }
 
   .team-member {
-    flex: 1 1 calc(25% - 24px);
-    max-width: calc(25% - 24px);
+    max-width: calc((100% - 72px) / 4);
   }
 }
 
@@ -760,7 +783,7 @@ ul {
 
 @media screen and (min-width: 768px) {
   .portfolio-item {
-    width: calc((100% - 48px) / 2);
+    width: calc((100% - 24px) / 2);
   }
 }
 
@@ -795,7 +818,8 @@ footer {
 }
 
 .foot .logo {
-  display: inline-block;
+  display: block;
+  text-align: center;
   margin-bottom: 16px;
 }
 
@@ -864,10 +888,6 @@ footer {
   fill: #f4f4fd;
 }
 
-.sub-footer {
-  margin-left: auto;
-}
-
 .subscribe {
   font-weight: 500;
   font-size: 16px;
@@ -883,10 +903,12 @@ footer {
   display: flex;
   align-items: center;
   gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .subscribe-input {
-  width: 264px;
+  width: 288px;
   height: 40px;
   padding-left: 16px;
   font-weight: 400;
@@ -921,7 +943,6 @@ footer {
   display: flex;
   align-items: center;
   flex-direction: row;
-  gap: 16px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -936,17 +957,46 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
+  .foter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+    padding: 0 108px;
+  }
   .container-f {
-    margin-right: 120px;
     margin-bottom: 0;
+  }
+
+  .foot .logo {
+    text-align: left;
   }
 
   .sm-footer {
     margin-bottom: 0;
   }
+
+  .social-media {
+    text-align: left;
+  }
+
+  .subscribe {
+    text-align: left;
+  }
 }
 
 @media screen and (min-width: 1158px) {
+  .foter {
+    gap: 0;
+    padding: 0 15px;
+  }
+
+  .container-f {
+    margin-right: 120px;
+  }
+
+  .sub-footer {
+    margin-left: auto;
+  }
 }
 
 /* Бекдроп */
@@ -987,7 +1037,7 @@ footer {
   left: 50%;
   transform: translate(-50%, -50%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 72px 24px 24px 24px;
+  padding: 72px 16px 16px 16px;
 }
 
 .close-modal {
@@ -1132,6 +1182,8 @@ input:focus + svg {
   text-align: left;
   align-items: center;
   color: #8e8f99;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .checkbox-form {
@@ -1147,6 +1199,7 @@ input:focus + svg {
   fill: transparent;
   display: inline-flex;
   margin-right: 8px;
+  flex-shrink: 0;
 }
 
 .modal-checkbox:checked + .checkbox-label > .checkbox-form {
@@ -1157,6 +1210,9 @@ input:focus + svg {
 
 .privacy-policy {
   color: #4d5ae5;
+  line-height: 1.33333;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
 }
 
 .submit-button {
@@ -1190,5 +1246,6 @@ input:focus + svg {
   .modal {
     width: 408px;
     min-height: 584px;
+    padding: 72px 24px 24px 24px;
   }
 }
