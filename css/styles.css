@@ -78,6 +78,7 @@ ul {
 .head .container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .menu,
@@ -381,11 +382,18 @@ ul {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/people-office.jpg);
+    url(../images/mobile1x.jpg);
   max-width: 320px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 320px 432px;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+@media (min-resolution: 192dpi) {
+  .hero {
+    background-image: url(../images/mobile2x.jpg);
+  }
 }
 
 .hero-title {
@@ -437,8 +445,13 @@ ul {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url(../images/people-office.jpg);
-    background-size: 768px 436px;
+      url(../images/tablet1x.jpg);
+  }
+
+  @media (min-resolution: 192dpi) {
+    .hero {
+      background-image: url(../images/tablet2x.jpg);
+    }
   }
 
   .hero-title {
@@ -465,9 +478,15 @@ ul {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url(../images/people-office.jpg);
-    background-size: 1440px 600px;
+      url(../images/desktop1x.jpg);
   }
+
+  @media (min-resolution: 192dpi) {
+    .hero {
+      background-image: url(../images/desktop2x.jpg);
+    }
+  }
+
   .hero-button {
     margin: 0 auto;
   }
