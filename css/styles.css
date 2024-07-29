@@ -78,7 +78,6 @@ ul {
 .head .container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .menu,
@@ -174,7 +173,8 @@ ul {
 
   .contact-info {
     font-style: normal;
-    display: block;
+    display: flex;
+    align-items: center;
   }
   .navigation {
     display: flex;
@@ -247,6 +247,7 @@ ul {
   display: flex;
   flex-direction: column;
   height: 100%;
+  justify-content: flex-start;
 }
 
 .mobile-menu-close {
@@ -392,7 +393,11 @@ ul {
 
 @media (min-resolution: 192dpi) {
   .hero {
-    background-image: url(../images/mobile2x.jpg);
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/mobile2x.jpg);
   }
 }
 
@@ -450,7 +455,11 @@ ul {
 
   @media (min-resolution: 192dpi) {
     .hero {
-      background-image: url(../images/tablet2x.jpg);
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/tablet2x.jpg);
     }
   }
 
@@ -483,7 +492,11 @@ ul {
 
   @media (min-resolution: 192dpi) {
     .hero {
-      background-image: url(../images/desktop2x.jpg);
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/desktop2x.jpg);
     }
   }
 
